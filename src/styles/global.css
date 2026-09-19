@@ -1,0 +1,35 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hand { font-family: var(--font-hand); }
+
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 16px 64px;
+}
+
+a { color: var(--cobalt); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 2px;
+}
+
+.chip {
+  border: 1.5px solid var(--line);
+  padding: 3px 12px;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--window);
+  display: inline-block;
+}
+.chip:hover { background: var(--marker); color: #23221e; text-decoration: none; }

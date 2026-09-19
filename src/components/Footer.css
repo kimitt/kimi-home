@@ -1,0 +1,20 @@
+.site-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.site-footer .squig {
+  display: block;
+  width: 120px;
+  margin: 2px auto 12px;
+}
+.site-footer .counter {
+  display: inline-block;
+  border: 2px solid var(--line);
+  background: var(--window);
+  padding: 4px 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.site-footer .counter b { color: var(--tangerine); }

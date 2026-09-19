@@ -1,0 +1,23 @@
+.diary-date {
+  font-size: 26px;
+  color: var(--tangerine);
+  margin-bottom: 10px;
+}
+.diary-photo {
+  border: 2px solid var(--line);
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 6px;
+}
+.diary-cap {
+  font-size: 19px;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+.diary-cap-empty {
+  border: 1.5px dashed var(--ink-soft);
+  padding: 18px;
+  text-align: center;
+}
+.diary-text p + p { margin-top: 4px; }
