@@ -10,18 +10,19 @@ import { dailyPosts, notePosts } from "./lib/content";
 export default function App() {
   const [view, setView] = useState("home");
   const [selected, setSelected] = useState(null);
+  const [dailyCount, setDailyCount] = useState(5);
 
   const openPost = (post) => {
     setSelected(post);
     setView("post");
     window.scrollTo(0, 0);
   };
-const navigate = (v) => {
-  setSelected(null);
-  setView(v);
-  window.scrollTo(0, 0);
-  if (window.gtag) window.gtag('event', 'view_change', { view_name: v });
-};
+  const navigate = (v) => {
+    setSelected(null);
+    setView(v);
+    window.scrollTo(0, 0);
+    if (window.gtag) window.gtag('event', 'view_change', { view_name: v });
+  };
 
   return (
     <div className="wrap">
@@ -35,8 +36,16 @@ const navigate = (v) => {
         </>
       )}
 
-      {view === "daily" && dailyPosts.map((p) => <DiaryCard key={p.slug} post={p} />)}
-
+      {view === "daily" && (
+        <>
+          {dailyPosts.slice(0, dailyCount).map((p) => <DiaryCard key={p.slug} post={p} />)}
+          {dailyCount < dailyPosts.length && (
+          <button type="button" className="chip" onClick={() => setDailyCount(dailyCount + 5)}>
+          더보기 ({dailyPosts.length - dailyCount}개 남음)
+          </button>
+          )}
+        </>
+      )}
       {view === "notes" && (
         <PostList title="notes / 전체 글" posts={notePosts} onSelect={openPost} />
       )}
