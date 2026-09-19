@@ -16,11 +16,12 @@ export default function App() {
     setView("post");
     window.scrollTo(0, 0);
   };
-  const navigate = (v) => {
-    setSelected(null);
-    setView(v);
-    window.scrollTo(0, 0);
-  };
+const navigate = (v) => {
+  setSelected(null);
+  setView(v);
+  window.scrollTo(0, 0);
+  if (window.gtag) window.gtag('event', 'view_change', { view_name: v });
+};
 
   return (
     <div className="wrap">
