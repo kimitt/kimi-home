@@ -13,7 +13,7 @@ export default function PostList({ title, posts, onSelect }) {
             <li key={p.slug}>
               <span className="t">
                 <a
-                  href={`#${p.slug}`}
+                  href={`#/notes/${encodeURIComponent(p.slug)}`}
                   onClick={(e) => {
                     e.preventDefault();
                     onSelect(p);
